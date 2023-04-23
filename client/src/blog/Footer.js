@@ -4,6 +4,9 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import styled from 'styled-components';
+
+
 
 function Copyright() {
   return (
@@ -21,6 +24,13 @@ function Copyright() {
 function Footer(props) {
   const { description, title } = props;
 
+  const NightModeButton = () => {
+      return <label class="switch">
+          <input type="checkbox"/>
+          <span class="slider"></span>
+      </label>;
+  }
+
   return (
     <Box component="footer" sx={{ bgcolor: 'background.paper', py: 6 }}>
       <Container maxWidth="lg">
@@ -33,8 +43,8 @@ function Footer(props) {
           color="text.secondary"
           component="p"
         >
-          {description}
         </Typography>
+          <NightModeButton/>
         <Copyright />
       </Container>
     </Box>

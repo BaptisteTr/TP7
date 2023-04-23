@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="759369aa-3d8b-4f6f-b5ac-5d4d14a21f8a" name="Changes" comment="ajout du composant blog">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/TP7.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/bin/www" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/public/stylesheets/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes/testAPI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/views/error.jade" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/views/index.jade" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/views/layout.jade" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +40,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681202010664</updated>
-      <workItem from="1681202011749" duration="7601000" />
+      <workItem from="1681202011749" duration="13350000" />
     </task>
     <task id="LOCAL-00001" summary="ajout du composant blog">
       <created>1681207002911</created>
@@ -71,7 +56,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681208415305</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ajout du composant blog">
+      <created>1681216093932</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681216093932</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

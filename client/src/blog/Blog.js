@@ -5,7 +5,6 @@ import Container from '@mui/material/Container';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
@@ -17,8 +16,6 @@ import {
   createBrowserRouter,
   RouterProvider,
   } from "react-router-dom";
-
-
 
 const sections = [
   { title: 'Technology', url: '/technology' },
@@ -85,10 +82,7 @@ const sidebar = {
   ],
 };
 
-
 const posts = [post1, post2, post3];
-
-const theme = createTheme();
 
 const router = createBrowserRouter([
   {
@@ -122,7 +116,7 @@ const router = createBrowserRouter([
 export default function Blog() {
 
   return (
-    <ThemeProvider theme={theme}>
+      <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
         <RouterProvider router={router} />
@@ -131,6 +125,6 @@ export default function Blog() {
         title="Footer"
         description="Something here to give the footer a purpose!"
       />
-    </ThemeProvider>
+      </React.Fragment>
   );
 }
