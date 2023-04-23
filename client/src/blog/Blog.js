@@ -13,11 +13,15 @@ import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 import {post1, post2, post3} from './posts';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  } from "react-router-dom";
 
 
 
 const sections = [
-  { title: 'Technology', url: '#' },
+  { title: 'Technology', url: '/technology' },
   { title: 'Design', url: '#' },
   { title: 'Culture', url: '#' },
   { title: 'Business', url: '#' },
@@ -86,30 +90,42 @@ const posts = [post1, post2, post3];
 
 const theme = createTheme();
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <React.Fragment><Header title="Blog" sections={sections} />
+    <main>
+    <MainFeaturedPost post={mainFeaturedPost} />
+    <Grid container spacing={4}>
+      {featuredPosts.map((post) => (
+        <FeaturedPost key={post.title} post={post} />
+      ))}
+    </Grid>
+    <Grid container spacing={5} sx={{ mt: 3 }}>
+      <Main title="From the firehose" posts={posts} />
+      <Sidebar
+        title={sidebar.title}
+        description={sidebar.description}
+        archives={sidebar.archives}
+        social={sidebar.social}
+      />
+      </Grid>
+    </main>
+    </React.Fragment>, 
+  },
+  {
+    path: "/technology",
+    element: <React.Fragment><Header title="Blog" sections={sections} /><div>Technology!</div></React.Fragment>
+  }
+]);
+
 export default function Blog() {
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Blog" sections={sections} />
-        <main>
-          <MainFeaturedPost post={mainFeaturedPost} />
-          <Grid container spacing={4}>
-            {featuredPosts.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
-            ))}
-          </Grid>
-          <Grid container spacing={5} sx={{ mt: 3 }}>
-            <Main title="From the firehose" posts={posts} />
-            <Sidebar
-              title={sidebar.title}
-              description={sidebar.description}
-              archives={sidebar.archives}
-              social={sidebar.social}
-            />
-          </Grid>
-        </main>
+        <RouterProvider router={router} />
       </Container>
       <Footer
         title="Footer"

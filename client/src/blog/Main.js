@@ -4,9 +4,19 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Markdown from './Markdown';
+import { useState, useEffect } from 'react'; 
 
 function Main(props) {
   const { posts, title } = props;
+
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {fetch(`http://localhost:9000/articles`)
+    .then((response) => response.json()
+    .then((articles) => setArticles(articles))
+    .catch((error) => console.log(error))
+  )
+  }, []);
 
   return (
     <Grid
@@ -23,7 +33,7 @@ function Main(props) {
         {title}
       </Typography>
       <Divider />
-      {posts.map((post) => (
+      {articles.map((post) => (
         <Markdown className="markdown" key={post.substring(0, 40)}>
           {post}
         </Markdown>
