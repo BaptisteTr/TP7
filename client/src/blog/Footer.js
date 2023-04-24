@@ -4,7 +4,8 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import styled from 'styled-components';
+import {ThemeContext} from '../utils/context';
+import {useContext} from 'react';
 
 
 
@@ -24,12 +25,17 @@ function Copyright() {
 function Footer(props) {
   const { description, title } = props;
 
-  const NightModeButton = () => {
-      return <label class="switch">
-          <input type="checkbox"/>
-          <span class="slider"></span>
-      </label>;
-  }
+  const { toggleTheme, theme } = useContext(ThemeContext);
+
+    const NightModeButton = () => {
+    return <React.Fragment>
+        <p>Changer de mode : {theme === 'light' ? '☀' : '🌙'}</p>
+        <label class="switch">
+        <input type="checkbox" checked={theme === 'dark'} onClick={() => toggleTheme()}/>
+        <span class="slider"></span>
+        </label>
+      </React.Fragment>;
+    }
 
   return (
     <Box component="footer" sx={{ bgcolor: 'background.paper', py: 6 }}>

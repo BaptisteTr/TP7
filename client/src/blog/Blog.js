@@ -16,6 +16,8 @@ import {
   createBrowserRouter,
   RouterProvider,
   } from "react-router-dom";
+import {ThemeProvider} from "../utils/context"
+import GlobalStyle from '../utils/style';
 
 const sections = [
   { title: 'Technology', url: '/technology' },
@@ -118,13 +120,16 @@ export default function Blog() {
   return (
       <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="lg">
-        <RouterProvider router={router} />
-      </Container>
-      <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
-      />
+      <ThemeProvider>
+        <GlobalStyle/>
+        <Container maxWidth="lg">
+          <RouterProvider router={router} />
+        </Container>
+        <Footer
+          title="Footer"
+          description="Something here to give the footer a purpose!"
+        />
+      </ThemeProvider>
       </React.Fragment>
   );
 }
